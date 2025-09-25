@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include <stdlib.h>
 int main(){
 int hours,minute,i; 
 int array[10];
@@ -34,8 +35,8 @@ if( min > array[j]){
 }
 
 }
-printf("la date plus convenable de dpart   cest %d \n",date_depart[indice]/60,date_depart[indice]%60);
-printf("la date arrive cest%d\n",date_arrive[indice]/60,date_arrive[indice]%60);
+printf("la date plus convenable de dpart   cest %d:%d \n",date_depart[indice]/60,date_depart[indice]%60);
+printf("la date arrive cest%d:%d\n",date_arrive[indice]/60,date_arrive[indice]%60);
 
 
     return 0;
