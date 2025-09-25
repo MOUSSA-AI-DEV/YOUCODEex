@@ -2,11 +2,11 @@
 int main(){
 int hours,minute,i; 
 int array[10];
-int indice;
-float date_arrive[10]={10.16,11.52,13.31,15.00,16.08,17.55,18.20,11.58};
-float date_depart[10]={8,9.43,11.19,12.47,14.00,15.45,19,21.45};
-
-
+int indice=0;
+int date_arrive[]={10*60 + 16, 11*60 + 52, 13*60 + 31, 15*60 + 0,
+                       16*60 + 8, 17*60 + 55, 21*60 + 20, 23*60 + 58};
+int date_depart[]={8*60 + 0, 9*60 + 43, 11*60 + 19, 12*60 + 47,
+                         14*60 + 0, 15*60 + 45, 19*60 + 0, 21*60 + 45};
 
 
 
@@ -16,30 +16,26 @@ int hour_user=(hours*60)+minute;
 printf("hour %d minute %d les heurs user %d\n",hours ,minute,hour_user);
 
 for(i=0;i<8;i++){
-    if((date_depart[i]*60 - hour_user)<0){
-       array[i]=-(date_depart[i]*60 - hour_user);
+  array[i] = abs(date_depart[i] - hour_user);
 
-    } else {
 
-        array[i]=date_depart[i]*60 - hour_user;
-      }10
      printf("%d\n",array[i]);
 };
 
 
-float min=0;
+int min=array[0];
 
 for(int j=0;j<8;j++)
 {
-if( min < array[j]){
+if( min > array[j]){
     min = array[j];
     indice=j;
 
 }
 
 }
-printf("la date plus convenable de dpart   cest %.2f \n",date_depart[indice]);
-printf("la date arrive cest%.2f\n",date_arrive[indice]);
+printf("la date plus convenable de dpart   cest %d \n",date_depart[indice]/60,date_depart[indice]%60);
+printf("la date arrive cest%d\n",date_arrive[indice]/60,date_arrive[indice]%60);
 
 
     return 0;
