@@ -41,11 +41,11 @@ int main()
             }
         }
         printf("%di\n", i);
-        if (n == 0)
+        if (i == 0)
         {
-            //     for (int j=0; j<i; j++){
+                for (int j=0; j<i; j++){
 
-            //     printf("%d\n", numbers[j]);
-            // }
+                printf("%d\n", numbers[j]);
+            }
         }
   }}
