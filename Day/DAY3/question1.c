@@ -23,20 +23,22 @@ int main()
         }
         else
         {
-            if (digit_seen[digit] == true)
+            bool deja_existe = false;
+            for (int j = 0; j < i; j++)
             {
-                for (int j = 0; j < i; j++)
+                if (numbers[j] == digit)
                 {
-                    
-                   
-                        numbers[i] = digit;
-                    
-               
-                    printf("%d\n", numbers[i]);
-                    n /= 10;
-                    i++;
-                };
-            };
+                    deja_existe = true;
+                    break;
+                }
+            }
+
+            if (!deja_existe)
+            {
+                numbers[i] = digit;
+                printf("%d\n", numbers[i]);  
+                i++;
+            }
         }
         printf("%di\n", i);
         if (n == 0)
