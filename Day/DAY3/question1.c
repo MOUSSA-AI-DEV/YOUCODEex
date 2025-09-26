@@ -2,7 +2,7 @@
 #include <stdbool.h>
 int main()
 {
-    
+
     bool digit_seen[10] = {false};
     int numbers[10];
     // bool indice = false ;
@@ -19,7 +19,6 @@ int main()
         if (digit_seen[digit] == false)
         {
             digit_seen[digit] = true;
-            n /= 10;
         }
         else
         {
@@ -36,16 +35,19 @@ int main()
             if (!deja_existe)
             {
                 numbers[i] = digit;
-                printf("%d\n", numbers[i]);  
+                printf("%d\n", numbers[i]);
                 i++;
             }
         }
-        printf("%di\n", i);
+        n/=10;
+        // printf("%di\n", i);
         if (i == 0)
         {
-                for (int j=0; j<i; j++){
+            for (int j = 0; j < i; j++)
+            {
 
                 printf("%d\n", numbers[j]);
             }
-        }
-  }}
+        }}
+    
+}
