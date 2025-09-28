@@ -1,64 +1,76 @@
-#include "heder.h"
-#include <stdio.h>
+#include "header.h"
 #include <stdlib.h>
-void menu();
+#include <stdio.h>
+#include <string.h>
+void menu(char avion[PLANES][FIELDS][SIZE_WORD],int ID[PLANES],int capacite[PLANES] );
 int main()
 {
+    
+ char avion[PLANES][FIELDS][SIZE_WORD] = 
+                              {
+                              {"m102", "disponible", "4/5/2005"},
+                              {"m102", "en maintenance", "4/5/2005"},
+                              {"m102", "en vol", "4/5/2005"},
+                              {"m102", "en vol", "4/5/2005"},
+                              {"m102", "disponible", "4/5/2005"}
+                            };
+                            int ID[PLANES] = {1, 2, 3, 4, 5};
+                            int capacite[PLANES]={80,40,59,10,84};
 
-    menu();
+    menu(avion,ID, capacite);
     return 0;
 }
 
 
-void menu(){
-    int nombre_operation;
-    char avion[][] = {{"1", "m102", "200", "disponible","4/5/2005"},
-                      {"2", "m102", "201", "en maintenance","4/5/2005"},
-                      {"3", "m102", "202", "en vol","4/5/2005"},
-                      {"4", "m102", "203", "en vol","4/5/2005"},
-                      {"5", "m102", "204", "disponible","4/5/2005"}};
 
-
+void menu(char avion[PLANES][FIELDS][SIZE_WORD],int ID[PLANES], int capacite[PLANES])
+{
+      int nombre_operation;
+  
     do
     {
-    printf("enter opertaion that you want to d in sotck\n1:create\n2:update\n 3:supprimer\n 4:afficher\n0: Exit");
-    scanf("%d",&nombre_operation);
-
+        
+        printf("Enter operation you want to do in stock:\n");
+        printf("1: create\n2: update\n3: supprimer\n4: afficher\n5: modify_element\n6:sorte\n0:Exit\n");
+        scanf("%d", &nombre_operation);
         system("cls");
-         
-    switch (nombre_operation)
-    {
-    case 1:
-        // create()
-        printf("Create ");
-         break;
+  
+        switch (nombre_operation)
+        {
+        case 1:
 
-    case 2:
-        // update() 
-        printf("Update");
-        
-        break;
+            create(avion,ID,capacite);
+            printf("Create ");
+            break;
 
-    case 3:
-        // supprimer()
-        printf("Delete ");
-        
-        break;
+        case 2:
+            modify(avion, ID,capacite);
 
-    case 4:
-        // afficher()
-        printf("Show ");
-        
-        break;
+            break;
 
-    case 0:
-        // afficher()
-        printf("Thalla ");
-        return;
+        case 3:
+            SUPRIMER(avion,ID,capacite);
 
-    default:
+            break;
 
+        case 4:
+            afficher(avion,ID,capacite);
 
-    }
-    } while (1);
+            break;
+        case 5:
+            chercher_element(avion,ID,capacite);
+
+            break;
+        case 6:
+            sort_element(avion,ID,capacite);
+
+            break;
+
+        case 0:
+            printf("Thalla ");
+            return;
+
+        default:
+        }
+    } while (nombre_operation !=0);
 }
