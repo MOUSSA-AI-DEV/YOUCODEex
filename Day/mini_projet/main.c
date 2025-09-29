@@ -1,6 +1,5 @@
 #include "header.h"
 #include <stdlib.h>
-#include <stdio.h>
 #include <string.h>
 void menu(char avion[PLANES][FIELDS][SIZE_WORD],int ID[PLANES],int capacite[PLANES] );
 int main()

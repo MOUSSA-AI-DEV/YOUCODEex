@@ -10,11 +10,10 @@ void create(char avion[PLANES][FIELDS][SIZE_WORD], int ID[PLANES], int capacite[
    {
       if (strcmp(avion[i][0], "") != 0)
       {
-         // le nombre compter
          if (ID[i] > last_id)
             last_id = ID[i];
       }
-      // pou avoir le nombre debuter par 1
+      
       else
       {
          ID[i] = last_id + 1;
@@ -100,7 +99,11 @@ void SUPRIMER(char avion[PLANES][FIELDS][SIZE_WORD], int ID[PLANES], int capacit
 {
    int delet_elemenet;
    printf("enter the plan that you want to dealte ");
+
+   
    // pour valide inpute int
+
+
    if (scanf("%d", &delet_elemenet) != 1)
    {
       printf("invalid input.\n");
@@ -161,9 +164,8 @@ void sort_element(char avion[PLANES][FIELDS][SIZE_WORD], int ID[PLANES], int cap
    {
       for (int j = 0; j < PLANES - i - 1; j++)
       {
-         // Ignorer les lignes vides
-         if (strcmp(avion[j][0], "") == 0 || strcmp(avion[j + 1][0], "") == 0)
-            continue;
+         
+       
 
          int cmp = 0;
 
