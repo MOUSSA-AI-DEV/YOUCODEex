@@ -8,7 +8,7 @@ int main()
  char avion[PLANES][FIELDS][SIZE_WORD] = 
                               {
                               {"m102", "disponible", "4/5/2005"},
-                              {"m102", "en maintenance", "4/5/2005"},
+                              {"m101", "en maintenance", "4/5/2005"},
                               {"m102", "en vol", "4/5/2005"},
                               {"m102", "en vol", "4/5/2005"},
                               {"m102", "disponible", "4/5/2005"}

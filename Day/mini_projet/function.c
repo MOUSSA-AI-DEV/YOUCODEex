@@ -1,6 +1,8 @@
 #include "header.h"
 #include <stdio.h>
 #include <string.h>
+
+
 char FIELD[FIELDS][SIZE_WORD] = {"MODEL", "STATUS", "DATE"};
 void create(char avion[PLANES][FIELDS][SIZE_WORD], int ID[PLANES], int capacite[PLANES])
 {
