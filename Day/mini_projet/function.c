@@ -1,6 +1,8 @@
 #include "header.h"
 #include <stdio.h>
 #include <string.h>
+
+
 char FIELD[FIELDS][SIZE_WORD] = {"MODEL", "STATUS", "DATE"};
 void create(char avion[PLANES][FIELDS][SIZE_WORD], int ID[PLANES], int capacite[PLANES])
 {
@@ -13,6 +15,10 @@ void create(char avion[PLANES][FIELDS][SIZE_WORD], int ID[PLANES], int capacite[
          if (ID[i] > last_id)
             last_id = ID[i];
       }
+<<<<<<< HEAD
+=======
+      
+>>>>>>> 0c44f64073b52787b0b615aed571185c383a75f1
       else
       {
          ID[i] = last_id + 1;
@@ -95,6 +101,14 @@ void SUPRIMER(char avion[PLANES][FIELDS][SIZE_WORD], int ID[PLANES], int capacit
 {
    int delet_elemenet;
    printf("enter the plan that you want to dealte ");
+<<<<<<< HEAD
+=======
+
+   
+   // pour valide inpute int
+
+
+>>>>>>> 0c44f64073b52787b0b615aed571185c383a75f1
    if (scanf("%d", &delet_elemenet) != 1)
    {
       printf("invalid input.\n");
@@ -154,9 +168,8 @@ void sort_element(char avion[PLANES][FIELDS][SIZE_WORD], int ID[PLANES], int cap
    {
       for (int j = 0; j < PLANES - i - 1; j++)
       {
-         // Ignorer les lignes vides
-         if (strcmp(avion[j][0], "") == 0 || strcmp(avion[j + 1][0], "") == 0)
-            continue;
+         
+       
 
          int cmp = 0;
 
