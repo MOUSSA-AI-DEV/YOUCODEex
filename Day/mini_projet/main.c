@@ -31,7 +31,7 @@ void menu(char avion[PLANES][FIELDS][SIZE_WORD],int ID[PLANES], int capacite[PLA
     {
         
         printf("Enter operation you want to do in stock:\n");
-        printf("1: create\n2: update\n3: supprimer\n4: afficher\n5: modify_element\n6:sorte\n0:Exit\n");
+        printf("1: create\n2: update\n3: supprimer\n4: afficher\n5: chrcher_element\n6:sorte\n0:Exit\n");
         scanf("%d", &nombre_operation);
         system("cls");
   

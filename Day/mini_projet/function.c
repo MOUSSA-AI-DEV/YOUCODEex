@@ -4,17 +4,15 @@
 char FIELD[FIELDS][SIZE_WORD] = {"MODEL", "STATUS", "DATE"};
 void create(char avion[PLANES][FIELDS][SIZE_WORD], int ID[PLANES], int capacite[PLANES])
 {
-   int i, j;
+   int i;
    int last_id = 0;
    for (i = 0; i < PLANES; i++)
    {
       if (strcmp(avion[i][0], "") != 0)
       {
-         // le nombre compter
          if (ID[i] > last_id)
             last_id = ID[i];
       }
-      // pou avoir le nombre debuter par 1
       else
       {
          ID[i] = last_id + 1;
@@ -32,22 +30,20 @@ void create(char avion[PLANES][FIELDS][SIZE_WORD], int ID[PLANES], int capacite[
          printf("the is%d\n", ID[i]);
          printf("Ajouter avion de ID %d\n", ID[i]);
 
-         for (j = 0; j < FIELDS - 1; j++)
-         {
-            if (j == 2)
-            {
-               printf("enter the  format dd/mm/yy  of %s: ", FIELD[j]);
-               scanf("%s", avion[i][j]);
-            }
-            else
-            {
-               printf("enter the %s: ", FIELD[j]);
-               scanf("%s", avion[i][j]);
-            }
-            printf("enter the capacite:");
-            scanf("%d", &capacite[i]);
-         }
-         break;
+         
+         printf("enter the model %s: ", FIELD[0]);
+           scanf("%s", avion[i][0]);
+           
+                          printf("enter the status %s: ", FIELD[1]);
+                            scanf("%s", avion[i][1]);
+                          
+               printf("enter the  format dd/mm/yy  of %s: ", FIELD[2]);
+               scanf("%s", avion[i][2]);
+            
+               printf(" enter the capacite:");
+               scanf("%d", &capacite[i]);
+           
+            break;
       }
    }
 }
@@ -77,7 +73,6 @@ void modify(char avion[PLANES][FIELDS][SIZE_WORD], int ID[PLANES], int capacite[
          scanf("%s", avion[i][3]);
 
          printf("Plane with ID %d modified successfully.\n", modify_element);
-         return;
       }
    }
 
@@ -100,7 +95,6 @@ void SUPRIMER(char avion[PLANES][FIELDS][SIZE_WORD], int ID[PLANES], int capacit
 {
    int delet_elemenet;
    printf("enter the plan that you want to dealte ");
-   // pour valide inpute int
    if (scanf("%d", &delet_elemenet) != 1)
    {
       printf("invalid input.\n");
@@ -141,7 +135,6 @@ void chercher_element(char avion[PLANES][FIELDS][SIZE_WORD], int ID[PLANES], int
 
          printf("ID=%d | MODEL=%s | STATUS=%s | DATE=%s | CAPACITE  %d \n", ID[i], avion[i][0], avion[i][1], avion[i][2], capacite[i]);
       }
-      break;
    }
 }
 
